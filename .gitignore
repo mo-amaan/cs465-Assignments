@@ -1,0 +1,13 @@
+# Visual Studio intermediate files
+*.obj
+*.suo
+*.sdf
+*.tlog
+*.opendb
+*.pdb
+*.idb
+*.ipch
+*.db
+Debug/
+.vs/
+*.vcxproj.user
