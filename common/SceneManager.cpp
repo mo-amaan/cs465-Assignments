@@ -230,7 +230,7 @@ void SceneManager::Render()
 	// Render the sprite list with an ortho camera. 
 	// TODO: We should really add the camera separately rather than hard code it.
 
-	const glm::mat4 mOrthoProj = glm::ortho(0.0f,1280.0f,720.0f,0.0f,0.0f,1000.0f);
+	//const glm::mat4 mOrthoProj = glm::ortho(0.0f,1280.0f,720.0f,0.0f,0.0f,1000.0f);
 	SpriteList::iterator sIt = m_lSpriteList.begin(), sEnd = m_lSpriteList.end();
 	for (; sIt != sEnd; ++sIt)
 	{

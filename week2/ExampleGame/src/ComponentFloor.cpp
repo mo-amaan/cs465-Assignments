@@ -6,7 +6,7 @@
 using namespace week2;
 
 //------------------------------------------------------------------------------
-// Method:    ComponentRenderableMesh
+// Method:    ComponentFloor
 // Returns:   
 // 
 // Constructor.
@@ -26,9 +26,9 @@ ComponentFloor::ComponentFloor()
 ComponentFloor::~ComponentFloor()
 {
 	// Remove the model from the scene
-	Common::SceneManager::Instance()->RemoveModel(m_pSprite);
+	Common::SceneManager::Instance()->RemoveSprite(m_pSprite);
 
-	// Delete the model
+	// Delete the Sprite
 	if (m_pSprite)
 	{
 		delete m_pSprite;
@@ -48,7 +48,7 @@ ComponentFloor::~ComponentFloor()
 //------------------------------------------------------------------------------
 void ComponentFloor::Init(const std::string& p_strTexture, const std::string& p_strVertexProgram, const std::string& p_strFragmentProgram, const glm::vec2& p_vDimensions)
 {
-	m_pSprite = new wolf::Sprite(p_strTexture,p_strVertexProgram,p_strFragmentProgram,p_vDimensions);
+	m_pSprite = new wolf::Sprite(p_strTexture, p_strVertexProgram, p_strFragmentProgram, p_vDimensions);
 	Common::SceneManager::Instance()->AddSprite(m_pSprite);
 }
 

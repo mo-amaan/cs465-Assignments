@@ -135,7 +135,7 @@
     <ClCompile Include="..\..\wolf\W_Sprite.cpp">
       <Filter>wolf</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentFloor.cpp" />
+    <ClCompile Include="src\ComponentFloor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">
@@ -309,6 +309,6 @@
     <ClInclude Include="..\..\wolf\W_Sprite.h">
       <Filter>wolf</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentFloor.h" />
+    <ClInclude Include="src\ComponentFloor.h" />
   </ItemGroup>
 </Project>

@@ -127,9 +127,9 @@
     <ClCompile Include="..\..\wolf\W_TextureManager.cpp" />
     <ClCompile Include="..\..\wolf\W_VertexBuffer.cpp" />
     <ClCompile Include="..\..\wolf\W_VertexDeclaration.cpp" />
-    <ClCompile Include="ComponentFloor.cpp" />
     <ClCompile Include="src\ComponentAnimController.cpp" />
     <ClCompile Include="src\ComponentCharacterController.cpp" />
+    <ClCompile Include="src\ComponentFloor.cpp" />
     <ClCompile Include="src\ComponentRenderableMesh.cpp" />
     <ClCompile Include="src\ExampleGame.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -186,9 +186,9 @@
     <ClInclude Include="..\..\wolf\W_Types.h" />
     <ClInclude Include="..\..\wolf\W_VertexBuffer.h" />
     <ClInclude Include="..\..\wolf\W_VertexDeclaration.h" />
-    <ClInclude Include="ComponentFloor.h" />
     <ClInclude Include="src\ComponentAnimController.h" />
     <ClInclude Include="src\ComponentCharacterController.h" />
+    <ClInclude Include="src\ComponentFloor.h" />
     <ClInclude Include="src\ComponentRenderableMesh.h" />
     <ClInclude Include="src\ExampleGame.h" />
   </ItemGroup>

@@ -13,6 +13,7 @@
 #include "ExampleGame.h"
 #include "GameObject.h"
 #include "SceneManager.h"
+#include "ComponentFloor.h"
 #include "W_Model.h"
 #include "W_Sprite.h"
 
@@ -67,6 +68,7 @@ bool ExampleGame::Init()
 
 	// Create an empty GameObject
 	Common::GameObject* pCharacter = m_pGameObjectManager->CreateGameObject();
+	pCharacter->GetTransform().Rotate(glm::vec3(0.0f, 180.0f, 0.0f));
 	pCharacter->GetTransform().Scale(glm::vec3(0.05f, 0.05, 0.05f));
 
 	// Create a renderable component for it
@@ -94,7 +96,13 @@ bool ExampleGame::Init()
 	ComponentCharacterController* pCharacterControllerComponent = new ComponentCharacterController();
 	pCharacter->AddComponent(pCharacterControllerComponent);
 
+	Common::GameObject* pFloor = m_pGameObjectManager->CreateGameObject();
+	pFloor->GetTransform().Rotate(glm::vec3(90.0f, 0.0f, 0.0f));
 
+	ComponentFloor* pRenderFloor = new ComponentFloor();
+	pRenderFloor->Init("assignmentResources/assignment1/textures/ground.tga", "assignmentResources/assignment1/shaders/textured.vsh", "assignmentResources/assignment1/shaders/textured.fsh",glm::vec2(-20.0f,20.0f));
+
+	pFloor->AddComponent(pRenderFloor);
 
 	// Everything initialized OK.
 	return true;
