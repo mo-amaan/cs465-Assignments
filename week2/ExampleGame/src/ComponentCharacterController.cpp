@@ -56,6 +56,7 @@ void ComponentCharacterController::Update(float p_fDelta)
 
 	// Get the parent GameObject's Transform component.
 	Common::Transform& transform = this->GetGameObject()->GetTransform();
+
 	if (glfwGetKey(GLFW_KEY_RIGHT) == GLFW_PRESS)
 		transform.Rotate(glm::vec3(0.0f, -75.0f * p_fDelta, 0.0f));
 	if (glfwGetKey(GLFW_KEY_LEFT) == GLFW_PRESS)

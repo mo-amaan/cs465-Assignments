@@ -16,6 +16,7 @@
 #include "ComponentFloor.h"
 #include "W_Model.h"
 #include "W_Sprite.h"
+#include "Component3rdPersonCamera.h"
 
 using namespace week2;
 
@@ -61,7 +62,7 @@ bool ExampleGame::Init()
 
 	// Initialize our Scene Camera and attach it to the Scene Manager
 	m_pSceneCamera = new Common::SceneCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f, glm::vec3(0.0f, 5.0f, 15.0f), glm::vec3(0.0f,5.0f,0.0f), glm::vec3(0.0f,1.0f,0.0f));
-	Common::SceneManager::Instance()->AttachCamera(m_pSceneCamera);
+	//Common::SceneManager::Instance()->AttachCamera(m_pSceneCamera);
 
 	// Initialize our GameObjectManager
 	m_pGameObjectManager = new Common::GameObjectManager();
@@ -76,6 +77,9 @@ bool ExampleGame::Init()
 	pRenderableComponent->Init("data/characters/swat/Swat.pod", "data/characters/swat/", "data/shaders/skinned.vsh", "data/shaders/skinned.fsh");
 	
 	pCharacter->AddComponent(pRenderableComponent);
+
+	Component3rdPersonCamera* pThirdPersonCamera = new Component3rdPersonCamera();
+	pCharacter->AddComponent(pThirdPersonCamera);
 
 	// Create an animation controller component for it
 	ComponentAnimController* pAnimControllerComponent = new ComponentAnimController();
@@ -97,10 +101,11 @@ bool ExampleGame::Init()
 	pCharacter->AddComponent(pCharacterControllerComponent);
 
 	Common::GameObject* pFloor = m_pGameObjectManager->CreateGameObject();
-	pFloor->GetTransform().Rotate(glm::vec3(90.0f, 0.0f, 0.0f));
+	pFloor->GetTransform().Translate(glm::vec3(0.0f, 0.0f, 0.0f));
+	pFloor->GetTransform().Rotate(glm::vec3(-90.0f, 0.0f, 0.0f));
 
 	ComponentFloor* pRenderFloor = new ComponentFloor();
-	pRenderFloor->Init("assignmentResources/assignment1/textures/ground.tga", "assignmentResources/assignment1/shaders/textured.vsh", "assignmentResources/assignment1/shaders/textured.fsh",glm::vec2(-20.0f,20.0f));
+	pRenderFloor->Init("assignmentResources/assignment1/textures/ground.tga", "assignmentResources/assignment1/shaders/textured.vsh", "assignmentResources/assignment1/shaders/textured.fsh",glm::vec2(-512.0f,512.0f));
 
 	pFloor->AddComponent(pRenderFloor);
 

@@ -136,6 +136,7 @@
       <Filter>wolf</Filter>
     </ClCompile>
     <ClCompile Include="src\ComponentFloor.cpp" />
+    <ClCompile Include="src\Component3rdPersonCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">
@@ -310,5 +311,6 @@
       <Filter>wolf</Filter>
     </ClInclude>
     <ClInclude Include="src\ComponentFloor.h" />
+    <ClInclude Include="src\Component3rdPersonCamera.h" />
   </ItemGroup>
 </Project>
