@@ -62,7 +62,7 @@ bool ExampleGame::Init()
 
 	// Initialize our Scene Camera and attach it to the Scene Manager
 	m_pSceneCamera = new Common::SceneCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f, glm::vec3(0.0f, 5.0f, 15.0f), glm::vec3(0.0f,5.0f,0.0f), glm::vec3(0.0f,1.0f,0.0f));
-	//Common::SceneManager::Instance()->AttachCamera(m_pSceneCamera);
+	Common::SceneManager::Instance()->AttachCamera(m_pSceneCamera);
 
 	// Initialize our GameObjectManager
 	m_pGameObjectManager = new Common::GameObjectManager();
@@ -109,6 +109,13 @@ bool ExampleGame::Init()
 
 	pFloor->AddComponent(pRenderFloor);
 
+	Common::GameObject* pLampPost = m_pGameObjectManager->CreateGameObject();
+	pLampPost ->GetTransform().Scale(glm::vec3(0.4f, 0.4f, 0.4f));
+
+	ComponentRenderableMesh* pRenderableLamp = new ComponentRenderableMesh();
+	pRenderableLamp->Init("assignmentResources/assignment1/props/lamp.pod", "assignmentResources/assignment1/props/lamp.tga", "assignmentResources/assignment1/shaders/textured.vsh", "assignmentResources/assignment1/shaders/textured.fsh");
+
+	pLampPost->AddComponent(pRenderableLamp);
 	// Everything initialized OK.
 	return true;
 }
